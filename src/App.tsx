@@ -43,7 +43,7 @@ function App() {
 						{location.pathname.slice(1).toUpperCase()}
 					</h2>
 				</div>
-				<div className="bg-slate-100 h-[100vh] p-4	">
+				<div className="bg-slate-100 h-[100vh] p-4 overflow-y-scroll">
 					<Outlet />
 				</div>
 			</div>

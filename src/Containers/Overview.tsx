@@ -5,10 +5,8 @@ import { RootState } from "../Store";
 
 const Overview = () => {
 	const state = useSelector((state: RootState) => state.user);
-	const loading = useSelector((state:RootState) => state.conditions.isLoading)
-	if (state.playedToday.items) {
 		return (
-			<div className="bg-white p-5 rounded-lg w-[65%] shadow-md h-min">
+			<div className="bg-white p-5 rounded-lg w-[65%] shadow-md h-min mt-[10px]">
 				<h3 className="font-semibold text-xl">Overview</h3>
 				<div>
 					<h4 className="my-2 text-slate-500">Top Analytics</h4>
@@ -21,10 +19,14 @@ const Overview = () => {
 						/>
 						<InfoCard
 							name="Songs Played Today"
-							value={state.playedToday.items.length > 50 ? "50+" : state.playedToday.items.length}
+							value={
+								state.playedToday.items.length > 50
+									? "50+"
+									: state.playedToday.items.length
+							}
 							img={note}
 							color={["bg-[#FFF4DE]", "bg-[#FF947A]"]}
- 						/>
+						/>
 						<InfoCard
 							name="Playlists"
 							value={state.userPlaylist.total}
@@ -41,9 +43,6 @@ const Overview = () => {
 				</div>
 			</div>
 		);
-	} else {
-		return <div></div>;
-	}
 };
 
 export default Overview;
