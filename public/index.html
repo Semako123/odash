@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="styles.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#000000" />
 		<meta name="description" content="A spotify dashboard" />
@@ -17,12 +17,39 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
 		<title>O-dash</title>
-    <style>
-      html{
-        height: 100vh;
-        overflow-y: hidden;
-      }
-    </style>
+		<style>
+			html {
+				height: 100vh;
+				overflow-y: hidden;
+			}
+			/* Width and height of the scrollbar track */
+			::-webkit-scrollbar {
+				width: 10px;
+				height: 10px;
+			}
+
+			/* Background of the scrollbar track */
+			::-webkit-scrollbar-track {
+				background: #333;
+			}
+
+			/* Color of the scrollbar handle */
+			::-webkit-scrollbar-thumb {
+				background-color: #1db954;
+				border-radius: 5px;
+				border: 2px solid transparent;
+			}
+
+			/* Hover styles for the scrollbar handle */
+			::-webkit-scrollbar-thumb:hover {
+				background-color: #17a048;
+			}
+
+			/* Styles for the scrollbar corner */
+			::-webkit-scrollbar-corner {
+				background: transparent;
+			}
+		</style>
 	</head>
 	<body>
 		<noscript>You need to enable JavaScript to run this app.</noscript>

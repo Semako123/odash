@@ -7,7 +7,9 @@ interface userState {
     topTracks: any,
     playedToday: any,
     topArtists: any,
-    featuredPlaylist:any
+    featuredPlaylist: any,
+    profile: any,
+    podcasts: any
 }
 
 const initialState: userState = {
@@ -17,7 +19,9 @@ const initialState: userState = {
     topTracks: {},
     playedToday: {},
     topArtists: {},
-    featuredPlaylist:{}
+    featuredPlaylist: {},
+    profile: {},
+    podcasts: {},
 }
 
 const userSlice = createSlice({
@@ -44,9 +48,15 @@ const userSlice = createSlice({
         },
         updateFeaturedPlaylist: (state, action) => {
             state.featuredPlaylist = action.payload
+        },
+        updateUserProfile: (state, action) => {
+            state.profile = action.payload
+        },
+        updatePodcasts: (state, action) => {
+            state.podcasts = action.payload
         }
     }
 })
 
-export const {updateFeaturedPlaylist, updadateTopArtsist, updateFollowedArtist, updateUserPlaylist, updateLikedSongs, updateTopTracks, updatePlayedToday} = userSlice.actions
+export const {updateFeaturedPlaylist, updadateTopArtsist, updateFollowedArtist, updateUserPlaylist, updateLikedSongs, updateTopTracks, updatePlayedToday, updateUserProfile, updatePodcasts} = userSlice.actions
 export default userSlice.reducer

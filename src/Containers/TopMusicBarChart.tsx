@@ -1,5 +1,4 @@
-import React from "react";
-import { CCard, CCardBody, CCardHeader } from "@coreui/react";
+import { CCard, CCardBody } from "@coreui/react";
 import { CChartBar } from "@coreui/react-chartjs";
 import { useSelector } from "react-redux";
 import { RootState } from "../Store";
@@ -14,10 +13,24 @@ const TopMusicBarChart = () => {
 		labels.push(track.name);
 		popularity.push(track.popularity);
 	}
+	const themeIsDark = useSelector(
+		(state: RootState) => state.conditions.isDark
+	);
+
 	return (
-		<div className="bg-white shadow-lg p-3 w-[65%] translate-y-[-50px] rounded-lg">
+		<div
+			className={`${
+				themeIsDark
+					? "bg-dark-accent shadow-slate-600 shadow-lg"
+					: "bg-light-accent shadow-lg"
+			} p-3 w-[65%] rounded-lg`}>
 			<CCard className="mb-4">
-				<h5 className="text-lg text-center mb-2">Your Top Tracks by Popularity</h5>
+				<h5
+					className={`${
+						themeIsDark ? "text-light-primary" : ""
+					} text-lg text-center mb-2`}>
+					Your Top Tracks by Popularity
+				</h5>
 				<CCardBody>
 					<CChartBar
 						data={{

@@ -16,8 +16,13 @@ const TrackCards = () => {
 	for (let artist of topMusic[0].artists) {
 		topMusicArtist += `${artist.name} . `;
 	}
+	const themeIsDark = useSelector(
+		(state: RootState) => state.conditions.isDark
+	);
+
 	return (
-		<div className="p-1 rounded-lg w-[35%] flex flex-col gap-5">
+		<div
+			className={`p-1 rounded-lg w-[35%] flex flex-col gap-5`}>
 			<TrackCard
 				artist={topMusicArtist}
 				img={topMusic[0].album.images[0].url}

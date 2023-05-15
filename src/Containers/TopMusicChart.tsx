@@ -6,6 +6,7 @@ import { CCard, CCardBody } from "@coreui/react";
 import { CChartRadar } from "@coreui/react-chartjs";
 
 const TopMusicChart = () => {
+	const api = API()
 	const state = useSelector((state: RootState) => state.user.topTracks.items);
 	const [data, setData] = useState({});
 	let [chartData, setChartData]: any = useState([]);
@@ -21,7 +22,7 @@ const TopMusicChart = () => {
 	];
 
 	useEffect(() => {
-		API.get(`/audio-features/${topTrackId}`).then((res) => {
+		api.get(`/audio-features/${topTrackId}`).then((res) => {
 			setData(res.data);
 		});
 	}, [topTrackId]);
@@ -33,15 +34,26 @@ const TopMusicChart = () => {
 				setChartData((state: any) => [...state, tmpD[x]]);
 			}
 		}
-		console.log(chartData);
 	}, [data]);
+
+	const themeIsDark = useSelector(
+		(state: RootState) => state.conditions.isDark
+	);
 
 	if (chartData.length > 0) {
 		return (
-			<div className="bg-white shadow-lg p-3 w-[31%] rounded-lg flex items-center justify-center m-auto">
+			<div
+				className={`${
+					themeIsDark ? "bg-dark-accent shadow-slate-700" : "bg-light-accent"
+				} shadow-lg p-3 w-[31%] rounded-lg flex items-center justify-center m-auto`}>
 				<CCard>
 					<CCardBody>
-						<h5 className="text-center mb-2">Top Track Audio Features</h5>
+						<h5
+							className={`${
+								themeIsDark ? "text-light-primary" : ""
+							} text-lg text-center mb-2`}>
+							Top Track Audio Features
+						</h5>
 						<CChartRadar
 							data={{
 								labels: xPara,
@@ -63,9 +75,12 @@ const TopMusicChart = () => {
 		);
 	} else {
 		return (
-			<div className="bg-white shadow-lg p-3 w-[65%] translate-y-[-80px] rounded-lg">
+			<div
+				className={`${
+					themeIsDark ? "bg-dark-accent shadow-slate-700" : "bg-light-accent"
+				} shadow-lg p-3 w-[31%] rounded-lg flex items-center justify-center m-auto`}>
 				{" "}
-				LOADING no chart...{" "}
+				LOADING
 			</div>
 		);
 	}

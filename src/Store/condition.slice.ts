@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface initialState{
-    isLoading:boolean
+interface initialStateInterface{
+    isLoading: boolean,
+    isDark: boolean;
 }
 
-const initialState: initialState = {
-    isLoading:true,
+const initialState: initialStateInterface = {
+    isLoading: true,
+    isDark: JSON.parse(localStorage.getItem("spotify_theme")!) || false,
 }
 
 const condition = createSlice({
@@ -14,9 +16,14 @@ const condition = createSlice({
     reducers: {
         setIsLoading: (state, action) => {
             state.isLoading = action.payload
+        },
+
+        setIsDark: (state, action) => {
+            localStorage.setItem("spotify_theme", JSON.stringify(action.payload))
+            state.isDark = action.payload
         }
     }  
 })
 
-export const {setIsLoading} = condition.actions
+export const {setIsLoading, setIsDark} = condition.actions
 export default condition.reducer
