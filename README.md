@@ -1,46 +1,57 @@
-# Getting Started with Create React App
+# Spotify Dash
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Spotify Dash is an open-source web application that provides a dashboard to view analytics on Spotify, inspired by Spotify Wrapped. The project is built using React, Redux, TypeScript, and Tailwind CSS.
 
-## Available Scripts
+##To contribute to the project or run it locally, follow these steps:
 
-In the project directory, you can run:
+### Step 1:
 
-### `yarn start`
+Fork the repository.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Step 2:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Clone the forked repository on your local machine.
 
-### `yarn test`
+```
+git clone https://github.com/<your_github_username>/odash.git
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Step 3:
+Open command prompt/Terminal.
+In the terminal run:
+```
+cd odash
+```
 
-### `yarn build`
+## How to Run
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To run the project, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Install dependencies by running the following command:
+`npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Start the project with the following command:
+`npm run start`
 
-### `yarn eject`
+This will open up the website on localhost. You can begin working. The changes will be reflected here.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## If you have any ideas or questions 🤷
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [Raise an issue](https://github.com/semako123/odash/issues)
+- [Feature request](https://github.com/semako123/odash/issues)
+- [Code submission](https://github.com/semako123/odash/pulls)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## License 🪪
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+ [MIT license](https://opensource.org/license/mit/)
 
-## Learn More
+## Thanks to all the Contributors ❤️
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<a href = "https://github.com/semako123/odash/graphs/contributors">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  <img src = "https://contrib.rocks/image?repo=semako123/odash"/>
+
+</a>
+
+
+
