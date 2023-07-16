@@ -1,14 +1,16 @@
 import App from "../App";
 import { Login } from "../Pages";
-import { useAlert } from "react-alert";
+import { toast } from "react-toastify";
 
 const Auth = ({ children }: { children: JSX.Element }) => {
-	const alert = useAlert()
+	const login_toast = () => {
+		toast("Login to continue");
+	};
 	const uid = JSON.parse(localStorage.getItem("spotify_token")!);
 	if (uid !== null) {
 		return <App />;
 	} else {
-		alert.info("log in to continue")
+		login_toast();
 		return <Login />;
 	}
 };

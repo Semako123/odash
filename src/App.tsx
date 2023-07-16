@@ -17,16 +17,21 @@ import {
 import { setIsLoading } from "./Store/condition.slice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./Store";
-import { useAlert } from "react-alert";
+import { toast } from "react-toastify";
 
 function App() {
 	const location = useLocation();
-	const alert = useAlert();
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const state = useSelector((state: RootState) => state.user);
 	const today = new Date();
 	const api = API();
+	const logout_toast = () => {
+		toast("✅ You've successfully logged out");
+	};
+	const session_toast = () => {
+		toast("🚫 Your session has expired. Login to continue");
+	};
 
 	// Set the time to 0:00am
 	today.setHours(0, 0, 0, 0);
@@ -113,7 +118,7 @@ function App() {
 			currentTimestamp >
 			parseInt(localStorage.getItem("spotify_time_signature")!)
 		) {
-			alert.error("Your session has expired. Login to continue");
+			session_toast();
 			navigate("/login");
 		}
 	}, [location]);
@@ -161,7 +166,7 @@ function App() {
 				<div
 					className="absolute bottom-4"
 					onClick={() => {
-						alert.success("You've successfully logged out");
+						logout_toast();
 					}}>
 					<NavButton link="/login" isActive={true}>
 						Logout
