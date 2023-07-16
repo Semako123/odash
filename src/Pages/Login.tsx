@@ -27,8 +27,8 @@ const Login = () => {
 			"playlist-read-private",
 		]; // set the scopes for the API request
 		const CLIENT_ID = "12fd89a0a6184bfaaf2f41f27168dccb";
-		// const REDIRECT_URI = "https://odash.vercel.app/redirect";
-		const REDIRECT_URI = "http://localhost:3000/redirect";
+		const REDIRECT_URI =
+			process.env.REDIRECT_URI ?? "https://odash.vercel.app/redirect";
 		const authUrl = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=token&redirect_uri=${REDIRECT_URI}&scope=${scopes.join(
 			"%20"
 		)}&show_dialog=true`;
