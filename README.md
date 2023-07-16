@@ -2,7 +2,7 @@
 
 Spotify Dash is an open-source web application that provides a dashboard to view analytics on Spotify, inspired by Spotify Wrapped. The project is built using React, Redux, TypeScript, and Tailwind CSS.
 
-##To contribute to the project or run it locally, follow these steps:
+## To contribute to the project or run it locally, follow these steps:
 
 ### Step 1:
 
